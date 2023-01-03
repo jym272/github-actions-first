@@ -6,11 +6,13 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      - run: npm ci
+      - name: Install and Run Tests
         working-directory: frontend
-      - run: npm run test
-        working-directory: frontend
+        run: |
+          npm ci
+          npm run test
   build-frontend:
+    needs: test-frontend
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
