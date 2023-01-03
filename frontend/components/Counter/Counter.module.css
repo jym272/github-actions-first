@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    border: 1px solid #7b0808;
+    background-color: #a1dcb2;
+}
+
+.counter {
+    color: red;
+}
