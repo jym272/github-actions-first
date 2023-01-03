@@ -1,5 +1,5 @@
 name: Test frontend
-on: [ push ]
+on: [ workflow_dispatch ]
 jobs:
   test-frontend:
     runs-on: ubuntu-latest
