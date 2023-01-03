@@ -9,24 +9,24 @@ jobs:
       - name: Output github context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
-          run: echo "$GITHUB_CONTEXT"
+        run: echo "$GITHUB_CONTEXT"
       - name: Output issue context
         env:
           ISSUE_CONTEXT: ${{ toJson(github.event.issue) }}
-          run: echo "$ISSUE_CONTEXT"
+        run: echo "$ISSUE_CONTEXT"
       - name: Output issue body
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
-          run: echo "$ISSUE_BODY"
+        run: echo "$ISSUE_BODY"
       - name: Output issue title
         env:
           ISSUE_TITLE: ${{ github.event.issue.title }}
-          run: echo "$ISSUE_TITLE"
+        run: echo "$ISSUE_TITLE"
       - name: Output issue number
         env:
           ISSUE_NUMBER: ${{ github.event.issue.number }}
-          run: echo "$ISSUE_NUMBER"
+        run: echo "$ISSUE_NUMBER"
       - name: Output issue labels
         env:
           ISSUE_LABELS: ${{ toJson(github.event.issue.labels) }}
-          run: echo "$ISSUE_LABELS"
+        run: echo "$ISSUE_LABELS"
