@@ -1,5 +1,5 @@
 name: Test frontend
-on: [push]
+on: [ push ]
 
 jobs:
   test-frontend:
@@ -7,9 +7,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-#      - name: Prepare environment #already ubuntu has nodejs
-#        uses: actions/setup-node@v1
-#        with:
-#          node-version: 'lts/hydrogen'
+      # go to the frontend directory
+      - name: Go to frontend directory
+        run: cd frontend
+      #      - name: Prepare environment #already ubuntu has nodejs
+      #        uses: actions/setup-node@v1
+      #        with:
+      #          node-version: 'lts/hydrogen'
       - run: npm ci
       - run: npm run test
