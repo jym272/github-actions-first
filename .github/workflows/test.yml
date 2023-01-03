@@ -10,6 +10,8 @@ jobs:
       # go to the frontend directory
       - name: Go to frontend directory
         run: cd frontend
+      - name: Print pwd
+        run: echo $PWD
       #      - name: Prepare environment #already ubuntu has nodejs
       #        uses: actions/setup-node@v1
       #        with:
