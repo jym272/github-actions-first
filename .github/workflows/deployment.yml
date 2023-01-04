@@ -3,10 +3,10 @@ name: Test frontend
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
-      - main
+      - master
 jobs:
   test-frontend:
     runs-on: ubuntu-latest
