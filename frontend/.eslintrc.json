@@ -2,13 +2,14 @@
   "extends": ["next/core-web-vitals", "prettier"],
   "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": "error",
+    "prettier/prettier": "warn",
     "no-console": "error",
     "no-debugger": "error",
     "no-alert": "error",
     "no-undef": "error",
     "no-unused-vars": "error",
     "no-use-before-define": "error",
-    "no-useless-constructor": "error"
+    "no-useless-constructor": "error",
+    "no-inline-comments": "error"
   }
 }
