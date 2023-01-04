@@ -47,7 +47,7 @@ export const Counter = () => {
 
     return <>
         <div className={styles.container}>
-            <div className={styles.counter}>Counter</div>
+            <div className={styles.counter}>Counter!</div>
             <span className={styles.value}>{state.setFromLocalStorage &&  state.count}</span>
             <ResetButton reset={()=> {
                 clearInterval(intervalValue!)
