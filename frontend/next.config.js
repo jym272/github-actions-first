@@ -1,7 +1,5 @@
 /** @type {import('next').NextConfig} */
 
-
-
 const isGithubActions = process.env.GITHUB_ACTIONS || false
 
 let assetPrefix = ''
@@ -13,9 +11,6 @@ if (isGithubActions) {
   assetPrefix = `/${repo}/`
   basePath = `/${repo}`
 }
-
-
-
 
 const nextConfig = {
   assetPrefix: assetPrefix,

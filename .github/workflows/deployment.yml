@@ -1,5 +1,12 @@
+# a comment
 name: Test frontend
-on: [ workflow_dispatch ]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 jobs:
   test-frontend:
     runs-on: ubuntu-latest
