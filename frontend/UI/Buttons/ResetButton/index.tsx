@@ -5,6 +5,8 @@ type ResetButtonProps = {
   reset: () => void;
 };
 
+// a minor comment
+
 export const ResetButton = ({ reset }: ResetButtonProps) => {
   return (
     <div onClick={reset} className={styles['modern-button']}>
