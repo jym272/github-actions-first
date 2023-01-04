@@ -1,9 +1,10 @@
 /** @type {import('next').NextConfig} */
 
+let assetPrefix = '/'
+let basePath = ''
 const isGithubActions = process.env.GITHUB_ACTIONS || false
 
-let assetPrefix = ''
-let basePath = ''
+
 
 if (isGithubActions) {
   const repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, '')
@@ -17,7 +18,7 @@ const nextConfig = {
   basePath: basePath,
   reactStrictMode: true,
   images: {
-    unoptimized: true,
+    unoptimized: true
   }
 }
 
