@@ -1,10 +1,6 @@
-# a comment
 name: Test frontend
 on:
   push:
-    branches:
-      - master
-  pull_request:
     branches:
       - master
 jobs:
