@@ -9,7 +9,5 @@ jobs:
       - name: Output github context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
-      - name: Output github context with project
         shell: bash
-        run: echo "${{ toJson(github) }}"
+        run: echo "$GITHUB_CONTEXT"
