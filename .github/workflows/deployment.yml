@@ -21,7 +21,7 @@ jobs:
     needs: test-frontend
     runs-on: ubuntu-latest
     outputs:
-      files: ${{ steps.build.outputs.files }}
+      files: ${{ steps.build.outputs.FILES }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -33,7 +33,7 @@ jobs:
           npm run build
           cp -rf ../.git/ out/
           touch out/.nojekyll
-          echo "::set-output name=files::"$(ls -a out)""
+          echo "FILES=$(du -h out | sort -hr)" >> $GITHUB_OUTPUT
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
@@ -49,8 +49,8 @@ jobs:
           name: frontend
       - name: Output from build
         run: |
-          printf 'Out Dir from Build Step:\n%s\n' "${{ needs.build-frontend.outputs.files }}"
-          printf 'Download Artifact:\n%s\n' "$(ls -a .)"
+          printf 'Files from Build Step:\n%s\n' "${{ needs.build-frontend.outputs.files }}"
+          printf 'Download Artifact Files:\n%s\n' "$(du -h . | sort -hr)"
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
