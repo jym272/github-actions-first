@@ -33,7 +33,7 @@ jobs:
           npm run build
           cp -rf ../.git/ out/
           touch out/.nojekyll
-          echo "::set-output name=files::"$(ls out)""
+          echo "::set-output name=files::"$(ls -a out)""
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
@@ -50,7 +50,7 @@ jobs:
       - name: Output from build
         run: |
           printf 'Out Dir from Build Step:\n%s\n' "${{ needs.build-frontend.outputs.files }}"
-          printf 'Download Artifact:\n%s\n' "$(ls .)"
+          printf 'Download Artifact:\n%s\n' "$(ls -a .)"
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
