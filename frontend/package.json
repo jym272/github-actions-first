@@ -2,6 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "description": "https://amanhimself.dev/blog/setup-nextjs-project-with-eslint-prettier-husky-lint-staged/",
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
