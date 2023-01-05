@@ -56,7 +56,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
       - name: OUTPUTING DIRS
-        on-error: continue # ignore errors
+        continue-on-error: true
         run: |
           ls -la
           ls -la frontend
