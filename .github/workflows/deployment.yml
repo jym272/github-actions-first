@@ -28,7 +28,7 @@ jobs:
         run: |
           npm ci
           npm run build
-          cp -rf .git/ out/
+          cp -rf ../.git/ out/
           touch out/.nojekyll
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
