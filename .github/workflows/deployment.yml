@@ -33,7 +33,9 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: frontend
-          path: frontend/out
+          path: |
+            frontend/out
+            .git/
   deploy-frontend:
     needs: build-frontend
     runs-on: ubuntu-latest
