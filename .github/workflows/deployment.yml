@@ -34,10 +34,19 @@ jobs:
         with:
           name: frontend
           path: frontend/out
+  deploy-frontend:
+    needs: build-frontend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: frontend
+      - name: Output Content
+        run: ls -la
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: frontend/out
+          FOLDER: .
           CLEAN: true
