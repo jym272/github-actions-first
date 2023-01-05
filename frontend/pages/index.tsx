@@ -1,8 +1,7 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import {Counter} from "../components";
-
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from '../styles/Home.module.css';
+import { Counter } from '../components';
 
 export default function Home() {
   return (
@@ -62,14 +61,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className={styles.grid}>
-
-
-
-
-
-        </div>
+        <div className={styles.grid}></div>
       </main>
     </>
-  )
+  );
 }
