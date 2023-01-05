@@ -15,5 +15,6 @@ only_the_name=$(basename $work_dir)
 echo "work dir: $work_dir"
 
 
+# is this really happening?
 
 printf 'Name:\n%s\n' "$(ls frontend)"
