@@ -33,7 +33,7 @@ jobs:
           npm run build
           cp -rf ../.git/ out/
           touch out/.nojekyll
-          echo "FILES=$(du -h out | sort -hr)" >> $GITHUB_OUTPUT
+          echo "FILES=test" >> $GITHUB_OUTPUT
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
