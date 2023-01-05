@@ -55,6 +55,13 @@ jobs:
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/**.[jt]s', '**/**.[jt]sx') }}
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+      - name: OUTPUTING DIRS
+        on-error: continue # ignore errors
+        run: |
+          ls -la
+          ls -la frontend
+          ls -la frontend/.next
+          ls -la frontend/out
       - name: Install an Build
         id: build
         working-directory: frontend
