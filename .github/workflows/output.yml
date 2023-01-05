@@ -4,6 +4,8 @@ jobs:
   info:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
       - name: Output github context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
