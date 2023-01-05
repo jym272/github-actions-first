@@ -55,13 +55,6 @@ jobs:
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/**.[jt]s', '**/**.[jt]sx') }}
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
-      - name: OUTPUTING DIRS
-        continue-on-error: true
-        run: |
-          ls -la
-          ls -la frontend
-          ls -la frontend/.next
-          ls -la frontend/out
       - name: Install an Build
         id: build
         working-directory: frontend
@@ -71,12 +64,6 @@ jobs:
           cp -rf ../.git/ out/
           touch out/.nojekyll
           echo "SIZE=$(du -sh out | awk '{print $1}')" >> $GITHUB_OUTPUT
-      - name: OUTPUTING DIRS
-        run: |
-          ls -la
-          ls -la frontend
-          ls -la frontend/out
-          ls -la frontend/.next
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
