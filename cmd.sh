@@ -6,7 +6,7 @@
 # save this cmd in a string du -h . | sort -hr
 echo "FILES=$(du  -h frontend/out | sort -hr)" >> NEW_VAR
 
-
+du -sh . | awk '{print $1}' >> NEW_VAR
 
 exit 0
 # folder of the work dir
