@@ -20,22 +20,25 @@ jobs:
   build-frontend:
     needs: test-frontend
     runs-on: ubuntu-latest
+    outputs:
+      files: ${{ steps.build.outputs.files }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Install an Build
+        id: build
         working-directory: frontend
         run: |
           npm ci
           npm run build
           cp -rf ../.git/ out/
           touch out/.nojekyll
+        run: echo "::set-output name=files::$(ls out)"
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
           name: frontend
-          path: |
-            frontend/out
+          path: frontend/out
   deploy-frontend:
     needs: build-frontend
     runs-on: ubuntu-latest
@@ -44,8 +47,9 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: frontend
-      - name: Output Content
-        run: ls -la
+      - name: Output from build
+        run: echo ${{ needs.build-frontend.outputs.files }}
+        run: ls .
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
