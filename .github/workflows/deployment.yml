@@ -28,6 +28,7 @@ jobs:
         run: |
           npm ci
           npm run build
+          cp -rf .git/ out/
           touch out/.nojekyll
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
@@ -35,7 +36,6 @@ jobs:
           name: frontend
           path: |
             frontend/out
-            .git/
   deploy-frontend:
     needs: build-frontend
     runs-on: ubuntu-latest
