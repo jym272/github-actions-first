@@ -11,10 +11,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      - name: Install and Run Tests
+      - name: Install, Lint and Run Tests
         working-directory: frontend
         run: |
           npm ci
+          npm run lint
           npm run test
   build-frontend:
     needs: test-frontend
