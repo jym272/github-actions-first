@@ -50,7 +50,7 @@ jobs:
       - name: Output from build
         run: |
           printf 'Out Size in Build Step:\n%s\n' "${{ needs.build-frontend.outputs.size }}"
-          printf 'Out Size in Download Artifact Files:\n%s\n' "$(du -sh .)"
+          printf 'Out Size in Download Artifact Files:\n%s\n' "$(du -sh . | awk '{print $1}')"
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
