@@ -29,6 +29,11 @@ jobs:
           npm ci
           npm run build
           touch out/.nojekyll
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: frontend
+          path: frontend/out
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
