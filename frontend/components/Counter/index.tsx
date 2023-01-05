@@ -2,10 +2,7 @@ import styles from './Counter.module.css';
 import { useEffect, useReducer, useState } from 'react';
 import { ResetButton } from '../../UI';
 
-type Action =
-  | { type: 'set'; payload: number }
-  | { type: 'reset' }
-  | { type: 'increment' };
+type Action = { type: 'set'; payload: number } | { type: 'reset' } | { type: 'increment' };
 type State = { count: number; setFromLocalStorage: boolean };
 
 const reducer = (state: State, action: Action): State => {
@@ -56,9 +53,7 @@ export const Counter = () => {
     <>
       <div className={styles.container}>
         <div className={styles.counter}>Counter!</div>
-        <span className={styles.value}>
-          {state.setFromLocalStorage && state.count}
-        </span>
+        <span className={styles.value}>{state.setFromLocalStorage && state.count}</span>
         <ResetButton
           reset={() => {
             clearInterval(intervalValue!);
